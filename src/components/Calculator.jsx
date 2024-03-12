@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import calculate from '../logic/calculate';
-import consoleText from '../modules/terminalFx';
+import ConsoleText from '../modules/terminalFx.jsx';
 
 const Calculator = () => {
   const [state, setState] = useState({ total: 0, next: 0 });
@@ -8,9 +8,13 @@ const Calculator = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [offset, setOffset] = useState({ x: 0, y: 0 });
 
-  useEffect(() => {
-    consoleText(['Drag the calculator'], 'text', ['#dfbfbf']);
-  }, []);
+  // useEffect(() => {
+  //   if (isDragging) {
+  //     consoleText([''], 'text', ['']); 
+  //   } else {
+  //     consoleText(['Drag the calculator'], 'text', ['#dfbfbf']); 
+  //   }
+  // }, [isDragging]);
 
   const handleMouseDown = (e) => {
     setIsDragging(true);
@@ -140,6 +144,7 @@ const Calculator = () => {
         </button>
       </div>
       </div>
+      <ConsoleText words={['Drag the calculator']} colors={['#dfbfbf']} isDragging={isDragging} />
     </>
   );
 };

@@ -28,21 +28,30 @@ html {
 }
 
 body {
-  background: linear-gradient(
-      124deg,
-      rgba(22, 22, 22, 0.65) 5%,
-      rgba(21, 52, 56, 0.65) 50%,
-      rgba(22, 22, 22, 0.65) 95%
-    ),
-    url(./assets/abstract_geometric.jpg);
-  background-position: center;
+  background: 
+    url(./assets/colorful.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
   font-family: "Poppins", sans-serif;
+  height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  position: relative;
+  margin: 0;
+}
+
+body:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 h1 {
@@ -432,6 +441,14 @@ button:active {
   top: 0;
 }
 
+#text{
+  z-index: 100;
+}
+
+#console{
+  z-index: 100;
+}
+
 .score-board {
   gap: 15rem;
 }
@@ -449,9 +466,6 @@ button:active {
   border-radius: 10px;
 }
 
-.hidden {
-  opacity: 0;
-}
 
 .container{
   margin-top: 15px;
